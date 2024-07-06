@@ -62,7 +62,7 @@ def create_social_media_post(points):
 
 # Test the Workflow
 points = [
-    "Islamic College of Brisbane launching Augmented Reality in the classroom",
+    "[point 1 eg new way of learning]",
     "Students reported 80% more engagement in learning",
     "Seeing 3D worlds pop up in front of them",
     "Starting 9th Aug 2024"
