@@ -3,7 +3,7 @@ import json
 from dotenv import load_dotenv
 import os
 
-# Load environment variables from .env file
+# Load environment variables from .env 
 load_dotenv()
 
 CLAUDE_API_URL = "https://api.anthropic.com/v1/messages"
@@ -40,7 +40,7 @@ blog_post_generator = Agent("BlogPostGenerator")
 seo_checker = Agent("SEOChecker")
 blog_post_refiner = Agent("BlogPostRefiner")
 
-# Main Workflow Function
+# Workflow function
 def create_social_media_post(points):
     # Generate blog post
     blog_post_prompt = "Create a blog post based on the following points:\n" + "\n".join(points)
@@ -50,7 +50,7 @@ def create_social_media_post(points):
     seo_prompt = f"Provide SEO feedback for the following blog post. Be concise and specific:\n{blog_post}"
     seo_feedback = seo_checker.run(seo_prompt)
     
-    # Refine blog post
+    # Refine blog post based on SEO feedback
     refine_prompt = f"Rewrite the following blog post to incorporate the SEO feedback. Focus on making the changes suggested in the feedback without altering the core message:\n\nOriginal Blog Post:\n{blog_post}\n\nSEO Feedback:\n{seo_feedback}"
     refined_blog_post = blog_post_refiner.run(refine_prompt)
     
@@ -60,7 +60,7 @@ def create_social_media_post(points):
         "refined_post": refined_blog_post
     }
 
-# Test the Workflow
+# Workflow
 points = [
     "[point 1 eg new way of learning]",
     "Students reported 80% more engagement in learning",
